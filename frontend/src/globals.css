@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  max-width: 400px;
+}
+
+input, textarea, button {
+  padding: 8px;
+  font-size: 1rem;
+}
+
+h1, h2 {
+  color: #0070f3;
+}
+
+.secure {
+  border-left: 5px solid green;
+  padding-left: 1rem;
+  background: #eaffea;
+}
+
+.insecure {
+  border-left: 5px solid red;
+  padding-left: 1rem;
+  background: #ffeaea;
+}
+
+.back-link {
+  margin-top: 1rem;
+}

@@ -1,6 +1,8 @@
+import '../globals.css';
+
 export const metadata = {
-  title: "Vulnerable Web App",
-  description: "Cybersecurity project using Next.js and Node.js",
+  title: 'Cybersecurity Demo App',
+  description: 'Demo app with secure and insecure routes',
 };
 
 export default function RootLayout({ children }) {

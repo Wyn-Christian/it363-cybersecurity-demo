@@ -1,14 +1,32 @@
-'use client';
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+"use client";
 
-export default function Logout() {
-  const router = useRouter();
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
+export default function LogoutPage() {
+  const [loggedOut, setLoggedOut] = useState(false);
 
   useEffect(() => {
-    document.cookie = 'username=; Max-Age=0; path=/;';
-    router.push('/');
-  }, [router]);
+    const doLogout = async () => {
+      await fetch("http://localhost:3001/api/logout", {
+        method: "POST",
+        cache: "no-store",
+        credentials: "include",
+      });
+      setLoggedOut(true);
+    };
 
-  return <p>Logging out...</p>;
+    doLogout();
+  }, []);
+
+  return (
+    <main className="secure">
+      <h2>{loggedOut ? "You have been logged out." : "Logging out..."}</h2>
+      {loggedOut && (
+        <p className="back-link">
+          <Link href="/">← Go to home</Link>
+        </p>
+      )}
+    </main>
+  );
 }
